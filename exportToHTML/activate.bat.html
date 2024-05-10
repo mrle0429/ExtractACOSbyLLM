@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>activate.bat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #a9b7c6;}
+.s5 { color: #cc7832; font-style: italic;}
+.s6 { color: #6897bb; font-style: italic;}
+.s7 { color: #9876aa; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+activate.bat</font>
+</center></td></tr></table>
+<pre><span class="s0">@echo off</span>
+
+<span class="s0">rem </span><span class="s2">This file is UTF-8 encoded, so we need to update the current code page while executing it</span>
+<span class="s0">for </span><span class="s1">/f </span><span class="s3">&quot;tokens=2 delims=:.&quot; </span><span class="s4">%%a </span><span class="s0">in </span><span class="s1">('</span><span class="s3">&quot;</span><span class="s4">%SystemRoot%</span><span class="s3">\System32\chcp.com&quot;</span><span class="s1">') </span><span class="s0">do </span><span class="s1">(</span>
+    <span class="s0">set </span><span class="s4">_OLD_CODEPAGE</span><span class="s0">=</span><span class="s5">%%</span><span class="s1">a 
+)</span>
+<span class="s0">if defined </span><span class="s1">_OLD_CODEPAGE (</span>
+    <span class="s3">&quot;</span><span class="s4">%SystemRoot%</span><span class="s3">\System32\chcp.com&quot; </span><span class="s6">65001 </span><span class="s0">&gt; </span><span class="s7">nul</span>
+<span class="s1">)</span>
+
+<span class="s0">set </span><span class="s4">VIRTUAL_ENV</span><span class="s0">=</span><span class="s1">E:\BDIC\Essay R\Code\pythonProject\openai-env 
+</span>
+<span class="s0">if not defined PROMPT set </span><span class="s4">PROMPT</span><span class="s0">=</span><span class="s1">$P$G 
+</span>
+<span class="s0">if defined </span><span class="s1">_OLD_VIRTUAL_PROMPT </span><span class="s0">set </span><span class="s4">PROMPT</span><span class="s0">=</span><span class="s4">%_OLD_VIRTUAL_PROMPT%</span>
+<span class="s0">if defined </span><span class="s1">_OLD_VIRTUAL_PYTHONHOME </span><span class="s0">set </span><span class="s4">PYTHONHOME</span><span class="s0">=</span><span class="s4">%_OLD_VIRTUAL_PYTHONHOME%</span>
+
+<span class="s0">set </span><span class="s4">_OLD_VIRTUAL_PROMPT</span><span class="s0">=</span><span class="s4">%PROMPT%</span>
+<span class="s0">set </span><span class="s4">PROMPT</span><span class="s0">=</span><span class="s1">(openai-env) </span><span class="s4">%PROMPT%</span>
+
+<span class="s0">if defined </span><span class="s1">PYTHONHOME </span><span class="s0">set </span><span class="s4">_OLD_VIRTUAL_PYTHONHOME</span><span class="s0">=</span><span class="s4">%PYTHONHOME%</span>
+<span class="s0">set </span><span class="s4">PYTHONHOME</span><span class="s0">=</span>
+
+<span class="s0">if defined </span><span class="s1">_OLD_VIRTUAL_PATH </span><span class="s0">set </span><span class="s4">PATH</span><span class="s0">=</span><span class="s4">%_OLD_VIRTUAL_PATH%</span>
+<span class="s0">if not defined </span><span class="s1">_OLD_VIRTUAL_PATH </span><span class="s0">set </span><span class="s4">_OLD_VIRTUAL_PATH</span><span class="s0">=</span><span class="s4">%PATH%</span>
+
+<span class="s0">set </span><span class="s4">PATH</span><span class="s0">=</span><span class="s4">%VIRTUAL_ENV%</span><span class="s1">\Scripts;</span><span class="s4">%PATH%</span>
+<span class="s0">set </span><span class="s4">VIRTUAL_ENV_PROMPT</span><span class="s0">=</span><span class="s1">(openai-env) </span>
+
+<span class="s1">:</span><span class="s0">END</span>
+<span class="s0">if defined </span><span class="s1">_OLD_CODEPAGE (</span>
+    <span class="s3">&quot;</span><span class="s4">%SystemRoot%</span><span class="s3">\System32\chcp.com&quot; </span><span class="s4">%_OLD_CODEPAGE% </span><span class="s0">&gt; </span><span class="s7">nul</span>
+    <span class="s0">set </span><span class="s4">_OLD_CODEPAGE</span><span class="s0">=</span>
+<span class="s1">)</span>
+</pre>
+</body>
+</html>

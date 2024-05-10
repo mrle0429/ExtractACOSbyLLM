@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>activate</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+activate</font>
+</center></td></tr></table>
+<pre><span class="s0"># This file must be used with &quot;source bin/activate&quot; *from bash*</span>
+<span class="s0"># You cannot run it directly</span>
+
+<span class="s0">deactivate () {</span>
+    <span class="s0"># reset old environment variables</span>
+    <span class="s0">if [ -n &quot;${_OLD_VIRTUAL_PATH:-}&quot; ] ; then</span>
+        <span class="s0">PATH=&quot;${_OLD_VIRTUAL_PATH:-}&quot;</span>
+        <span class="s0">export PATH</span>
+        <span class="s0">unset _OLD_VIRTUAL_PATH</span>
+    <span class="s0">fi</span>
+    <span class="s0">if [ -n &quot;${_OLD_VIRTUAL_PYTHONHOME:-}&quot; ] ; then</span>
+        <span class="s0">PYTHONHOME=&quot;${_OLD_VIRTUAL_PYTHONHOME:-}&quot;</span>
+        <span class="s0">export PYTHONHOME</span>
+        <span class="s0">unset _OLD_VIRTUAL_PYTHONHOME</span>
+    <span class="s0">fi</span>
+
+    <span class="s0"># This should detect bash and zsh, which have a hash command that must</span>
+    <span class="s0"># be called to get it to forget past commands.  Without forgetting</span>
+    <span class="s0"># past commands the $PATH changes we made may not be respected</span>
+    <span class="s0">if [ -n &quot;${BASH:-}&quot; -o -n &quot;${ZSH_VERSION:-}&quot; ] ; then</span>
+        <span class="s0">hash -r 2&gt; /dev/null</span>
+    <span class="s0">fi</span>
+
+    <span class="s0">if [ -n &quot;${_OLD_VIRTUAL_PS1:-}&quot; ] ; then</span>
+        <span class="s0">PS1=&quot;${_OLD_VIRTUAL_PS1:-}&quot;</span>
+        <span class="s0">export PS1</span>
+        <span class="s0">unset _OLD_VIRTUAL_PS1</span>
+    <span class="s0">fi</span>
+
+    <span class="s0">unset VIRTUAL_ENV</span>
+    <span class="s0">unset VIRTUAL_ENV_PROMPT</span>
+    <span class="s0">if [ ! &quot;${1:-}&quot; = &quot;nondestructive&quot; ] ; then</span>
+    <span class="s0"># Self destruct!</span>
+        <span class="s0">unset -f deactivate</span>
+    <span class="s0">fi</span>
+<span class="s0">}</span>
+
+<span class="s0"># unset irrelevant variables</span>
+<span class="s0">deactivate nondestructive</span>
+
+<span class="s0"># on Windows, a path can contain colons and backslashes and has to be converted:</span>
+<span class="s0">if [ &quot;$OSTYPE&quot; = &quot;cygwin&quot; ] || [ &quot;$OSTYPE&quot; = &quot;msys&quot; ] ; then</span>
+    <span class="s0"># transform D:\path\to\venv to /d/path/to/venv on MSYS</span>
+    <span class="s0"># and to /cygdrive/d/path/to/venv on Cygwin</span>
+    <span class="s0">export VIRTUAL_ENV=$(cygpath &quot;E:\BDIC\Essay R\Code\pythonProject\openai-env&quot;)</span>
+<span class="s0">else</span>
+    <span class="s0"># use the path as-is</span>
+    <span class="s0">export VIRTUAL_ENV=&quot;E:\BDIC\Essay R\Code\pythonProject\openai-env&quot;</span>
+<span class="s0">fi</span>
+
+<span class="s0">_OLD_VIRTUAL_PATH=&quot;$PATH&quot;</span>
+<span class="s0">PATH=&quot;$VIRTUAL_ENV/Scripts:$PATH&quot;</span>
+<span class="s0">export PATH</span>
+
+<span class="s0"># unset PYTHONHOME if set</span>
+<span class="s0"># this will fail if PYTHONHOME is set to the empty string (which is bad anyway)</span>
+<span class="s0"># could use `if (set -u; : $PYTHONHOME) ;` in bash</span>
+<span class="s0">if [ -n &quot;${PYTHONHOME:-}&quot; ] ; then</span>
+    <span class="s0">_OLD_VIRTUAL_PYTHONHOME=&quot;${PYTHONHOME:-}&quot;</span>
+    <span class="s0">unset PYTHONHOME</span>
+<span class="s0">fi</span>
+
+<span class="s0">if [ -z &quot;${VIRTUAL_ENV_DISABLE_PROMPT:-}&quot; ] ; then</span>
+    <span class="s0">_OLD_VIRTUAL_PS1=&quot;${PS1:-}&quot;</span>
+    <span class="s0">PS1=&quot;(openai-env) ${PS1:-}&quot;</span>
+    <span class="s0">export PS1</span>
+    <span class="s0">VIRTUAL_ENV_PROMPT=&quot;(openai-env) &quot;</span>
+    <span class="s0">export VIRTUAL_ENV_PROMPT</span>
+<span class="s0">fi</span>
+
+<span class="s0"># This should detect bash and zsh, which have a hash command that must</span>
+<span class="s0"># be called to get it to forget past commands.  Without forgetting</span>
+<span class="s0"># past commands the $PATH changes we made may not be respected</span>
+<span class="s0">if [ -n &quot;${BASH:-}&quot; -o -n &quot;${ZSH_VERSION:-}&quot; ] ; then</span>
+    <span class="s0">hash -r 2&gt; /dev/null</span>
+<span class="s0">fi</span>
+</pre>
+</body>
+</html>
