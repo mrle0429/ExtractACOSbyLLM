@@ -8,6 +8,15 @@
 4. Apply -> OK
 5. Run右侧的三个点。选择运行的环境
 
+# 模板设计思路
+固定的提示话术
+预设方面类别（不是唯一）
+情感词
+EX1
+EX2
+尽量给出Reasoning
+
+
 # Grocery_and_Gourmet_Food_5
 I am performing the ASQP task, which is the Subtask of ABSA. 
 Instruction: extract aspect-category-opinion-sentiment quadruples from input data. 
@@ -18,6 +27,7 @@ From now on, if I give you a sentence, create the quadruples according to reason
 Please just output the ASQP. Output format neet to follow (aspect, category, opinion, sentiment). 
 When extracting aspect term and option term, an aspect category is judged by a combination of aspect term and opinion term, and sentimental polarity is judged by comprehensively
 considering everything.
+
 Here are possible aspect category set: [’food prices’, ’food style_options’, ’service general’, ’drinks prices’, ’am-
 bience general’, ’drinks quality’, ’location general’, ’restaurant prices’, ’restaurant general’, ’drinks style_options’,
 ’food general’, ’restaurant miscellaneous’, ’food quality’].
