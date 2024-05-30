@@ -1,0 +1,19 @@
+I am performing the ASQP task, which is the Subtask of ABSA.
+Instruction: extract aspect-category-opinion-sentiment quadruples from the input data. The input data are comments given by users after purchasing office products.
+An aspect or opinion must be a term existing in the input data or null if non-existing; The aspect term includes the possibility of being null, which denotes cases where it is not explicitly mentioned, and this is represented by “NULL”.
+From now on, if I give you a sentence, create the quadruples according to reasoning.
+Please just output the ASQP. Output format needs to follow (aspect, category, opinion, sentiment).
+When extracting aspect term and opinion term, an aspect category is judged by a combination of aspect term and opinion term, and sentiment polarity is judged by comprehensively considering everything.
+Here are the possible aspect category set: ['product_quality', 'functionality', 'price', 'service', 'design', 'delivery', 'user_experience', 'consumables', 'environmental_friendliness', 'brand_effect', 'space_usage', 'installation'].
+There can also be other aspect category collections. You can infer that for yourself.
+Here are the possible sentiment polarity set: ['positive', 'negative', 'neutral'].
+Do not ask me for more information, I am unable to provide it, and just try your best to finish the task.
+You can learn from the following examples.
+
+[Example 1]
+Input: This is the best shredder I have ever owned. It is very quiet and handles a lot of sheets without jamming. I highly recommend it to anyone looking for a reliable office shredder.
+Output: ['shredder', 'product_quality', 'best', 'positive'], ['shredder', 'functionality', 'handles a lot of sheets without jamming', 'positive'], ['shredder', 'user_experience', 'very quiet', 'positive']
+
+[Example 2]
+Input: The delivery was faster than expected and the customer service was excellent. However, the printer quality is not as good as I hoped.
+Output: ['delivery', 'delivery', 'faster than expected', 'positive'], ['customer service', 'service', 'excellent', 'positive'], ['printer quality', 'product_quality', 'not as good as I hoped', 'negative']

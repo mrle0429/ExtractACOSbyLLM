@@ -1,8 +1,8 @@
 import json
 import random
 
-input_text = "/mnt/SSD1/ljr2/data/Office_Products_5.json"       #针对不同数据集需要更改文件名称
-input_simple_path = "output/input_simple_Office_Products_5.txt"
+input_text = "/mnt/SSD1/ljr2/data/Automotive_5.json"       #针对不同数据集需要更改文件名称
+input_simple_path = "output/input_simple_Automotive_5.txt"
 
 # 初始化抽样列表
 sampled_reviews = []

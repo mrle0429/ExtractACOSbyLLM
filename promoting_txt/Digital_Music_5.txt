@@ -1,0 +1,21 @@
+# Digital_Music_5
+I am performing the ASQP task, which is the Subtask of ABSA.
+Instruction: extract aspect-category-opinion-sentiment quadruples from the input data. The input data are comments given by users after purchasing music albums.
+An aspect or opinion must be a term existing in the input data or null if non-existing; The aspect term includes the possibility of being null, which denotes cases where it is not explicitly mentioned, and this is represented by “NULL”.
+From now on, if I give you a sentence, create the quadruples according to reasoning.
+Please just output the ASQP. Output format needs to follow (aspect, category, opinion, sentiment).
+When extracting aspect term and opinion term, an aspect category is judged by a combination of aspect term and opinion term, and sentiment polarity is judged by comprehensively considering everything.
+Here are the possible aspect category set: ['music_quality', 'vocals', 'lyrics', 'instrumentation', 'production', 'overall_experience', 'album_artwork'].
+There can also be other aspect category collections. You can infer that for yourself.
+Here are the possible sentiment polarity set: ['positive', 'negative', 'neutral'].
+Do not ask me for more information, I am unable to provide it, and just try your best to finish the task.
+You can learn from the following examples.
+
+
+[Example 1]
+Input: Over the past twenty-odd years, Enya Brennan has become known worldwide for her layered vocals and delicate instrumentation, in many ways defining New Age music. But for her to have essentially taken the crown of this genre implies a depth to her music, and this is very evident on "The Memory of Trees". Enya's first few albums were good, but there was something missing, something that had yet to be developed. I'm not entirely sure what that intangible "something" was, but she certainly found it on this one. The title track is an instrumental masterpiece featuring her trademark layered vocals (though no lyrics to speak of), and it reminds on of a clear fall day. This sets the pace for the record, which is decidedly autumnal. 'Anywhere Is' is about the maze that life's choices put us into, while 'Pax Deorum' features few lyrics (all in Latin) that reverberate almost like a dark stormy night that eventually settles into a calm drizzle. 'Once You had Gold' is as delicate as a falling leaf, and 'On My Way Home' brings back memories of weekend trips home from college, traveling through the gorgeous foliage and dizzying scents of fall. If 'Only Time' defined her "A Day without Rain" album, it's 'China Roses' that defines "The Memory of Trees". Enya has crafted a lullaby-like soothing piece of moonlight that is instantly calming. It's easily the best piece of the record and, even nearly twenty years after the album's release, it still stands firmly, refusing to sound dated in a genre that, at one point, relied a little too much on synthesizers. It's been over fifteen years since "The Memory of Trees" was released, but it's a still favorite when it comes to Enya's music. As another reviewer said, you can't go wrong with this artist, but this album is definitely one of her best.
+Output: ['The Memory of Trees', 'music_quality', 'defining New Age music', 'positive'], ['title track', 'instrumentation', 'instrumental masterpiece', 'positive'], ['Pax Deorum', 'lyrics', 'few lyrics', 'neutral'], ['Once You had Gold', 'music_quality', 'as delicate as a falling leaf', 'positive'], ['China Roses', 'music_quality', 'soothing piece of moonlight', 'positive'], ['album', 'overall_experience', 'one of her best', 'positive']
+
+[Example 2]
+Input: [One CD, with a running time of 44 minutes.] Ah...this wonderful CD shows off Enya's silky smooth voice. The eleven tunes are hauntingly beautiful. I won't try to categorize her music, it is simply too rich and complex. The paperwork includes the words to ten of the songs (The Memory of Trees is a musical number), and two nice color pictures of Enya. (I love extras!) So, if you like Enya's past hits, then I think that you will like this one as well. Buy it!
+Output: ['CD', 'vocals', 'silky smooth voice', 'positive'], ['eleven tunes', 'music_quality', 'hauntingly beautiful', 'positive'], ['album', 'overall_experience', 'too rich and complex', 'positive'], ['paperwork', 'album_artwork', 'nice color pictures of Enya', 'positive']

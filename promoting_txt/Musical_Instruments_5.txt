@@ -1,0 +1,27 @@
+# Musical_Instruments_5
+I am performing the ASQP task, which is the Subtask of ABSA. 
+Instruction: extract aspect-category-opinion-sentiment quadruples from input data. The input data are comments given by users after purchasing Musical Instruments.
+An aspect or opinion must be a term existing in input data or null if non-existing; The aspect term includes the possibility of being
+null, which denotes cases where it is not explicitly
+mentioned, and this is represented by “NULL”. 
+From now on, if I give you a sentence, create the quadruples according to reason. 
+Please just output the ASQP. Output format neet to follow (aspect, category, opinion, sentiment). 
+When extracting aspect term and option term, an aspect category is judged by a combination of aspect term and opinion term, and sentimental polarity is judged by comprehensively
+considering everything.
+Here are possible aspect category set: ['sound quality', 'durability', 'price/value', 'ease of use', 'brand reputation', 'aesthetic design', 'overall performance'].
+There can also be other aspect category collections. You can infer that for yourself.
+Here are possible sentiment polarity set: [’positive’,’negative’,’neutral’].
+Do not ask me for more information, I am unable to
+provide it, and just try your best to finish the task.
+You can learn from the following examples.
+[Example 1]
+Input: "I still operate in an analog environment quite often, so I end up using lots of inserts. I have 8 channels of compression, limiter, gate and expander, plus various EQs and effects processors that need to be routed and applied to specific channels. I have an insert snake that I use as well, but the individual insert cables (of differing lengths) that I carry are lifesavers that make me a more efficient soundman during setup and a more flexible soundman during the show!",  "Soundman must have insert cables"
+Output: ['insert cables', 'overall perfermance', 'efficient', 'positive']
+Reasoning: In this sentence, the aspect term is ‘insert cables’ and the opinion term for this aspect term is
+‘efficient’. Since the aspect term is ‘insert cables’ and the opinion about the aspect term is ‘efficient’, the
+aspect category can be inferred as ‘overall perfermance’ for this aspect term. Lastly, the aspect term ‘insert cables’
+is evaluated as a opinion of ‘efficient’. When it comes to perfermance, the opinion ’positive’ suggests that the insert cables is
+useful, which is evaluated as a positive sentiment
+[Example 2]
+Input: "very nice guitar pics, sound almost as nice as metal guitar pics, very lovely, size was as expected, great sound", "summary": "high quality"
+Output: ['sound', 'sound quality', 'great', 'positive'], ['NULL', 'aesthetic design', 'lovely', 'positive']
