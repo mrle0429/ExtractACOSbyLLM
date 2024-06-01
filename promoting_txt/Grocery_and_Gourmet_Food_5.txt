@@ -1,24 +1,24 @@
 # Grocery_and_Gourmet_Food_5
 I am performing the ASQP task, which is the Subtask of ABSA. 
-Instruction: extract aspect-category-opinion-sentiment quadruples from input data. 
-An aspect or opinion must be a term existing in input data or null if non-existing; The aspect term includes the possibility of being
-null, which denotes cases where it is not explicitly
-mentioned, and this is represented by “NULL”. 
-From now on, if I give you a sentence, create the quadruples according to reason. 
-Please just output the ASQP. Output format neet to follow (aspect, category, opinion, sentiment). 
+Instruction: Extract aspect-category-opinion-sentiment quadruples from input data. If I give you a sentence, create the quadruples according to reason.
+An aspect or opinion must be a term existing in input data or null if non-existing; The aspect term/opinion term includes the possibility of being
+null, which denotes cases where it is not explicitly mentioned, and this is represented by “NULL”.
+The category is one in the predefined list. However, there can also be other aspect category collections. You can infer that for yourself.;
 When extracting aspect term and option term, an aspect category is judged by a combination of aspect term and opinion term, and sentimental polarity is judged by comprehensively
 considering everything.
 
-Here are possible aspect category set: [’food prices’, ’food style_options’, ’service general’, ’drinks prices’, ’am-
+Possible aspect category set: [’food prices’, ’food style_options’, ’service general’, ’drinks prices’, ’am-
 bience general’, ’drinks quality’, ’location general’, ’restaurant prices’, ’restaurant general’, ’drinks style_options’,
 ’food general’, ’restaurant miscellaneous’, ’food quality’].
-Here are possible sentiment polarity set: [’positive’,’negative’,’neutral’].
-do not ask me for more information, I am unable to
+Sentiment polarity set: [’positive’,’negative’,’neutral’].
+
+Do not ask me for more information, I am unable to
 provide it, and just try your best to finish the task.
 You can learn from the following examples.
+Output format: (aspect, category, opinion, sentiment)
 [Example 1]
 Input: The fried dumplings are GREAT!
-Output: [’fried dumplings’, ’food quality’, ’GREAT’, ’positive’]
+Output: (’fried dumplings’, ’food quality’, ’GREAT’, ’positive’)
 Reasoning: In this sentence, the aspect term is ‘fried dumplings’ and the opinion term for this aspect term is
 ‘GREAT’. Since the aspect term is ‘fried dumplings’ and the opinion about the aspect term is ‘GREAT’, the
 aspect category can be inferred as ‘food quality’ for this aspect term. Lastly, the aspect term ‘fried dumplings’
@@ -26,7 +26,7 @@ is evaluated as a opinion of ‘GREAT’. When it comes to food, the opinion ’
 delicious, which is evaluated as a positive sentiment
 [Example 2]
 Input: It’s one of our favorite places to eat in NY.
-Output: [’NULL’, ’restaurant general’, ’positive’, ’favorite’]
+Output: (’NULL’, ’restaurant general’, ’positive’, ’favorite’)
 Reasoning: In this sentence, there is no specific aspect term mentioned explicitly. So the aspect term is ‘NULL’
 and the opinion term for this aspect term is ‘favorite’. The aspect category could be inferred as ’restaurant
 general’ as the speaker is expressing a general sentiment about the restaurant rather than a specific feature or
